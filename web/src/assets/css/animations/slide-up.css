@@ -1,0 +1,33 @@
+.slide-up-enter-active,
+.slide-up-leave-active {
+    transition: all 0.8s ease-out;
+    z-index: -1;
+}
+
+
+.slide-up-enter-to {
+    position: absolute;
+    top: 5.375em;
+    opacity: 1;
+}
+
+
+.slide-up-enter-from {
+    position: absolute;
+    top: calc(100vh + 5.375em);
+    opacity: 0;
+}
+
+
+.slide-up-leave-to {
+    position: absolute;
+    bottom: calc(100vh + 5.375em);
+    opacity: 0;
+}
+
+
+.slide-up-leave-from {
+    position: absolute;
+    bottom: 5.375em;
+    opacity: 1;
+}

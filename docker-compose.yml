@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - "5432"
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=betsoc
+      - POSTGRES_PASSWORD=betsoc
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U betsoc" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    image: pear-api
+    container_name: pear-api
+    build:
+      context: ./
+    ports:
+      - "3080:3080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/betsoc
+      - SPRING_DATASOURCE_USERNAME=betsoc
+      - SPRING_DATASOURCE_PASSWORD=betsoc
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+  frontend:
+    image: pear-vue
+    container_name: pear-vue
+    build:
+      context: ./web
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend

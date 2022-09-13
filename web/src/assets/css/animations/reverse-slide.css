@@ -1,0 +1,32 @@
+.reverse-slide-enter-active,
+.reverse-slide-leave-active {
+    transition: all 0.8s ease-out;
+}
+
+
+.reverse-slide-enter-to {
+    position: absolute;
+    left: 0;
+    opacity: 1;
+}
+
+
+.reverse-slide-enter-from {
+    position: absolute;
+    left: -100vw;
+    opacity: 0;
+}
+
+
+.reverse-slide-leave-to {
+    position: absolute;
+    right: -100vw;
+    opacity: 0;
+}
+
+
+.reverse-slide-leave-from {
+    position: absolute;
+    right: 0;
+    opacity: 1;
+}

@@ -1,0 +1,50 @@
+h1.form-title {
+  text-align: center;
+}
+.section {
+  background-color: var(--background-soft );
+  text-align: center;
+}
+.form-section {
+  padding: 0;
+  margin-bottom: 2em;
+
+  >:not(.section) {
+    padding: 0 1em;
+  }
+
+  img {
+    background-color: white;
+    max-width: 25vw;
+  }
+
+  pre {
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+}
+
+.form-buttons {
+  margin: 2em 0;
+  text-align: center;
+
+  button {
+    &:first-child {
+      margin-right: 1em;
+    }
+    &:last-child {
+      margin-left: 1em;
+    }
+  }
+}
+
+p.label {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+p[data-pear-required=true]::after {
+  content: "*";
+  color: red;
+}

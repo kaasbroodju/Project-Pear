@@ -1,0 +1,16 @@
+{
+  "default": {
+  "--background": "#37393e",
+  "--background-sidebar": "#202225",
+  "--background-soft": "#2f3136",
+  "--text": "#cccccc",
+  "--text-soft": "#808080"
+  },
+  "scorion": {
+    "--background": "#c8c6c1",
+    "--background-sidebar": "#e36307",
+    "--background-soft": "#d0cec9",
+    "--text": "#333333",
+    "--text-soft": "#7f7f7f"
+  }
+}
